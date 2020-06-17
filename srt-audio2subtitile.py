@@ -1,6 +1,10 @@
 import speech_recognition as sr
 import re
-with open("captions.srt") as files:
+
+#file from youtube
+ysrtsubfilename = "captions.srt"
+wavefilefromy = "makesubtitle.wav"
+with open(ysrtsubfilename) as files:
     filestr = files.read()
 
 starts=re.findall(r"\d\d:\d\d:\d\d,\d\d\d -->", filestr)
@@ -24,7 +28,7 @@ def makesecound(temp):
 Ssec = [makesecound(std) for std in starts]
 Dsec = [makesecound(std) for std in durations]
 r = sr.Recognizer()
-files = sr.AudioFile("makesubtitle.wav")
+files = sr.AudioFile(wavefilefromy)
 pre = 0
 audios = []
 with files as src:
