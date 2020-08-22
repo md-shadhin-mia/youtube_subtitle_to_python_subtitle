@@ -8,5 +8,6 @@ USER gitpod
  RUN sudo apt-get -q update && \
      sudo apt-get install -yq bastet \
      p7zip-full \
+     links2 \
 #
 # More information: https://www.gitpod.io/docs/config-docker/
